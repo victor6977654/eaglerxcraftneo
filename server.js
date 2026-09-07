@@ -133,23 +133,23 @@ wss.on("connection", (ws, req) => {
      * =========================================
      */
 
-    if (url.pathname === "/tunnel") {
+if (url.pathname === "/tunnel") {
 
-if (token !== TUNNEL_TOKEN) {
-            console.log("Túnel rechazado: token incorrecto");
+    if (token !== TUNNEL_TOKEN) {
+        console.log("Túnel rechazado: token incorrecto");
 
-            ws.close(1008, "Invalid token");
-            return;
-        }
+        ws.close(1008, "Invalid token");
+        return;
+    }
 
-        if (tunnel && tunnel.readyState === WebSocket.OPEN) {
-            console.log("Ya existe un túnel activo.");
+    if (tunnel && tunnel.readyState === WebSocket.OPEN) {
+        console.log("Ya existe un túnel activo.");
 
-            ws.close(1008, "Tunnel already connected");
-            return;
-        }
+        ws.close(1008, "Tunnel already connected");
+        return;
+    }
 
-        tunnel = ws;
+    tunnel = ws;
 
         tunnel.binaryType = "nodebuffer";
 
