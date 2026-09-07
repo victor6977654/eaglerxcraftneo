@@ -3,7 +3,7 @@ const crypto = require("crypto");
 const WebSocket = require("ws");
 
 const PORT = process.env.PORT || 10000;
-const TOKEN = process.env.TUNNEL_TOKEN || "CAMBIA_ESTO";
+const TUNNEL_TOKEN = "RDXZ-9f82Kx7LmP4Qz81-TUNNEL";
 
 const TYPE_BINARY = 0x00;
 const TYPE_TEXT   = 0x01;
