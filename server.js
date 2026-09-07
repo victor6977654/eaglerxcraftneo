@@ -135,7 +135,7 @@ wss.on("connection", (ws, req) => {
 
     if (url.pathname === "/tunnel") {
 
-        if (token !== TOKEN) {
+if (token !== TUNNEL_TOKEN) {
             console.log("Túnel rechazado: token incorrecto");
 
             ws.close(1008, "Invalid token");
